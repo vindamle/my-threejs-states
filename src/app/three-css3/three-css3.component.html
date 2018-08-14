@@ -2,19 +2,19 @@
   <button *ngIf="selected !== 'Table'" (click)="showTable($event)">Table</button>
   <button *ngIf="selected !== 'Sphere'" (click)="showSphere($event)">Sphere</button>
   <button *ngIf="selected !== 'Helix'" (click)="showHelix($event)">Helix</button>
-  <button *ngIf="selected !== 'Grid'" (click)="showGrid($event)">Grid</button>  
+  <button *ngIf="selected !== 'Grid'" (click)="showGrid($event)">Grid</button>
 </div>
-<!-- <div class="paneldisplay"> -->
-  <div *ngFor="let threeCss3Data of threeCss3DataList">
-    <ng-container [ngTemplateOutlet]="hello" [ngTemplateOutletContext]="{threeCss3Data: threeCss3Data}">
-    </ng-container>
-  </div>
-  <ng-template #hello let-threeCss3Data="threeCss3Data">
-    <div class="element">
-      <div class="number">{{threeCss3Data.title}}</div>
-      <div class="symbol"><a [href]="threeCss3Data.link" target="_blank"><img [src]="threeCss3Data.image" width="68" height="68"></a>
-      </div>
-      <div class="details" [innerHtml]="threeCss3Data.details"></div>
+<div *ngFor="let threeCss3Data of threeCss3DataList">
+  <ng-container [ngTemplateOutlet]="hello" [ngTemplateOutletContext]="{threeCss3Data: threeCss3Data}">
+  </ng-container>
+</div>
+<ng-template #hello let-threeCss3Data="threeCss3Data">
+  <div class="element">
+    <div class="number">{{threeCss3Data.title}}</div>
+    <div class="symbol"><a [href]="threeCss3Data.link" target="_blank">
+        <img [src]="threeCss3Data.image" width="68px" height="68px">
+      </a>
     </div>
-  </ng-template>
-<!-- </div> -->
+    <div class="details" [innerHtml]="threeCss3Data.details"></div>
+  </div>
+</ng-template>

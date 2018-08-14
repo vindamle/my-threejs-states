@@ -98,7 +98,10 @@ export class ThreeCss3Component implements OnInit, AfterViewInit {
 
     const elements: Array<any> = this.elRef.nativeElement.querySelectorAll('.element');
 
-    elements.forEach((element, index) => {
+		for (let i = 0, l = elements.length; i < l; i++) {
+
+      let element = elements[ i ];
+
       let object: any = new THREE.CSS3DObject( element );
 
       object.position.x = Math.random() * 4000 - 2000;
@@ -108,8 +111,8 @@ export class ThreeCss3Component implements OnInit, AfterViewInit {
       this.scene.add( object );
 
       this.objects.push( object );
-      let row = Math.floor(index / 5) + 1;
-      let col = Math.floor(index % 5) + 1;
+      let row = Math.floor(i / 5) + 1;
+      let col = Math.floor(i % 5) + 1;
 
       let object3D: any = new THREE.Object3D();
 			// object3D.position.x = (index  * 140) - 100;
@@ -122,7 +125,7 @@ export class ThreeCss3Component implements OnInit, AfterViewInit {
       this.targets.table.push( object3D );
       
 
-    });
+    }
 
 
 		// sphere
