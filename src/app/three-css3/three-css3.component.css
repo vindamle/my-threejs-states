@@ -42,3 +42,9 @@
 .element .symbol img {
     -ms-interpolation-mode: bicubic;
 }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    img[src*=".svg"] {
+      width: 100%;
+    }
+  }

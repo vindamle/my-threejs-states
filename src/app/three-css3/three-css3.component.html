@@ -11,8 +11,9 @@
 <ng-template #hello let-threeCss3Data="threeCss3Data">
   <div class="element">
     <div class="number">{{threeCss3Data.title}}</div>
-    <div class="symbol"><a [href]="threeCss3Data.link" target="_blank">
-        <img [src]="threeCss3Data.image" width="68px" height="68px">
+    <div class="symbol">
+      <a [href]="threeCss3Data.link" target="_blank">
+        <img width="68" height="68" [src]="threeCss3Data.image">
       </a>
     </div>
     <div class="details" [innerHtml]="threeCss3Data.details"></div>
